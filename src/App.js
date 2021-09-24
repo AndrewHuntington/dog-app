@@ -53,8 +53,8 @@ function App(props) {
     <div className="App">
       <Navbar dogs={props.dogs} />
       <Switch>
-        <Route exact path="/dogs/:name" render={dogDisplayComponent} />
         <Route exact path="/dogs" render={menuComponent} />
+        <Route path="/dogs/:name" render={dogDisplayComponent} />
         <Redirect to="/dogs" />
       </Switch>
     </div>

@@ -1,20 +1,20 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import "./DogDisplay.css";
 
 export default class DogDisplay extends Component {
-  paramsName = this.props.match.params.name;
-
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
-  findDog() {
+  findDog(dogName) {
     for (const dog of this.props.dogs) {
-      if (dog.name === this.paramsName) {
+      if (dog.name === dogName) {
         return dog;
       }
     }
+    return null;
   }
 
   handleClick() {
@@ -22,14 +22,22 @@ export default class DogDisplay extends Component {
   }
 
   render() {
-    const dog = this.findDog();
+    const paramsName = this.props.match.params.name;
+    const dog = this.findDog(paramsName);
+
+    if (!dog) {
+      return <Redirect to="/dogs" />;
+    }
+
     const dogFacts = dog.facts.map((fact) => (
-      <li className="list-group-item">{fact}</li>
+      <li className="list-group-item" key={Date.now() + Math.random()}>
+        {fact}
+      </li>
     ));
 
     return (
       <div className="DogDisplay-card card mx-auto my-4">
-        <img src={dog.src} class="card-img-top" alt="dog pic" />
+        <img src={dog.src} className="card-img-top" alt="dog pic" />
         <div className="card-body">
           <h5 className="card-title">{dog.name}</h5>
           <h6 className="card-subtitle mb-2 text-muted">{`${dog.age} years old`}</h6>
@@ -37,9 +45,9 @@ export default class DogDisplay extends Component {
         <ul className="list-group list-group-flush">
           {dogFacts}
           <li className="list-group-item">
-            <btn className="btn btn-primary" onClick={this.handleClick}>
+            <button className="btn btn-primary" onClick={this.handleClick}>
               Go back
-            </btn>
+            </button>
           </li>
         </ul>
       </div>

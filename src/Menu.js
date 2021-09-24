@@ -5,9 +5,13 @@ import "./Menu.css";
 export default class Menu extends Component {
   render() {
     const dogs = this.props.dogs.map((d) => (
-      <div className="Menu-item">
+      <div className="Menu-item" key={d.name}>
         <Link to={`/dogs/${d.name}`} dog={d} className="Menu-link">
-          <img src={d.src} className="Menu-img img-fluid rounded-circle" />
+          <img
+            src={d.src}
+            className="Menu-img img-fluid rounded-circle"
+            alt={`${d.name}`}
+          />
           <p>{d.name}</p>
         </Link>
       </div>
