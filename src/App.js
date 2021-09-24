@@ -51,7 +51,7 @@ function App(props) {
   );
   return (
     <div className="App">
-      <Navbar />
+      <Navbar dogs={props.dogs} />
       <Switch>
         <Route exact path="/dogs/:name" render={dogDisplayComponent} />
         <Route exact path="/dogs" render={menuComponent} />

@@ -4,7 +4,13 @@ p {
   margin-top: 1em;
 }
 
-a {
+.Menu-img {
+  box-shadow: 3px 10px 21px 2px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 10px 21px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 10px 21px 2px rgba(0, 0, 0, 0.75);
+}
+
+.Menu-link {
   display: inline-block;
   position: relative;
   color: #000;
@@ -12,13 +18,7 @@ a {
   text-transform: uppercase;
 }
 
-img {
-  box-shadow: 3px 10px 21px 2px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 3px 10px 21px 2px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 3px 10px 21px 2px rgba(0, 0, 0, 0.75);
-}
-
-a::after {
+.Menu-link::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -32,7 +32,7 @@ a::after {
   transition: transform 0.25s ease-out;
 }
 
-a:hover::after {
+.Menu-link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
