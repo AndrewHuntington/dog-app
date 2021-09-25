@@ -6,7 +6,7 @@ export default class Menu extends Component {
   render() {
     const dogs = this.props.dogs.map((d) => (
       <div className="Menu-item" key={d.name}>
-        <Link to={`/dog-app/dogs/${d.name}`} dog={d} className="Menu-link">
+        <Link to={`/dogs/${d.name}`} dog={d} className="Menu-link">
           <img
             src={d.src}
             className="Menu-img img-fluid rounded-circle"
