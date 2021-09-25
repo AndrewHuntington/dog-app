@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Dog Shelter App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An app that displays a clickable menu of dogs, with each linking to their own profile page.
 
-## Available Scripts
+### [Try it live](https://AndrewHuntington.github.io/dog-app)
 
-In the project directory, you can run:
+# Screen Shot
 
-### `yarn start`
+![Screenshot of Dog Shelter App](/other/dog-app.png "Dad Shelter App")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Installation and Setup Instructions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone down the repository. You will need `node` and `npm` installed globally on your machine.
 
-### `yarn test`
+Installation:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`
 
-### `yarn build`
+To Start Server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To Visit App:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`http://localhost:3000`
 
-### `yarn eject`
+# Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React
+- JavaScript
+- CSS
+- git / GitHub
+- Bootstrap
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Reflection/Issues
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This is a project that was built for Colt Steele's [The Modern React Bootcamp](https://www.udemy.com/course/modern-react-bootcamp) on Udemy. The main purpose of this project is to solidify my understanding of React Router patterns. A secondary goal is to make the site totally responsive.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+After completing the project, I still feel a bit unsure of my understanding of React Router, and I think I will review my learning material and the site docs once again.
 
-## Learn More
+One problem that still stubbornly persists with my project is the way routes seem to be handled once hosted to GitHub Pages. The expected behavior (which matches the behavior that I see when the project is hosted on my machine) is that the root route to the index page should be like the following:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`<path>/dog-app/dogs`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+However, once hosted on GitHub, I get the following route to my index page:
 
-### Code Splitting
+`andrewhuntington.github.io/dogs`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+_`/dog-app/` mysteriously disappears!_
 
-### Analyzing the Bundle Size
+This seems to cause some issues when manually refreshing the page, and interferes with my error handling when a user goes to a page that does not exist. In both cases, the user should land on the index page, but instead the user will see GitHub's 404 page. I assume this is a conflict between React Router and how GitHub's server handles routing, but I do not know for sure. If anyone has an answer, please contact me.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Additional Acknowledgements
 
-### Making a Progressive Web App
+This readme is based on a template called the [Peronsal project README template](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4) by GitHub user [martensonbj](https://gist.github.com/martensonbj).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project was bootstrapped with `react-create-app`. I tried my best to mimic the design of the original without looking at the source code. All other code is my own.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright 2021, Andrew Huntington.
