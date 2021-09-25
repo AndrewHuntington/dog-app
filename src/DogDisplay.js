@@ -18,7 +18,7 @@ export default class DogDisplay extends Component {
   }
 
   handleClick() {
-    this.props.history.push("/dogs");
+    this.props.history.goBack();
   }
 
   render() {
