@@ -53,9 +53,9 @@ function App(props) {
     <div className="App">
       <Navbar dogs={props.dogs} />
       <Switch>
-        <Route exact path="/dogs" render={menuComponent} />
-        <Route path="/dogs/:name" render={dogDisplayComponent} />
-        <Redirect to="/dogs" />
+        <Route exact path="dog-app/dogs" render={menuComponent} />
+        <Route path="dog-app/dogs/:name" render={dogDisplayComponent} />
+        <Redirect to="dog-app/dogs" />
       </Switch>
     </div>
   );

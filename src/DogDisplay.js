@@ -18,7 +18,7 @@ export default class DogDisplay extends Component {
   }
 
   handleClick() {
-    this.props.history.push("/dogs");
+    this.props.history.push("dog-app/dogs");
   }
 
   render() {
@@ -26,7 +26,7 @@ export default class DogDisplay extends Component {
     const dog = this.findDog(paramsName);
 
     if (!dog) {
-      return <Redirect to="/dogs" />;
+      return <Redirect to="dog-app/dogs" />;
     }
 
     const dogFacts = dog.facts.map((fact) => (

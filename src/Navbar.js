@@ -8,7 +8,7 @@ export default class Navbar extends Component {
         <NavLink
           className="nav-link"
           activeClassName="active"
-          to={`/dogs/${d.name}`}
+          to={`dog-app/dogs/${d.name}`}
         >
           {d.name}
         </NavLink>
@@ -19,7 +19,7 @@ export default class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/dogs">
+            <Link className="navbar-brand" to="dog-app/dogs">
               Dog Shelter
             </Link>
             <button
